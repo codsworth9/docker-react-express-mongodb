@@ -1,9 +1,7 @@
 import React from 'react';
-import { render, cleanup, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { MessagesItem } from '../MessagesItem';
-
-afterEach(cleanup);
 
 const props = {
   text: 'This is a text message',
@@ -11,10 +9,9 @@ const props = {
 };
 
 it('renders with default props', () => {
-  render(<MessagesItem {...props} />);
+  const { container } = render(<MessagesItem {...props} />);
 
-  expect(screen.getByText('user1')).toBeInTheDocument();
+  expect(container.innerHTML).toMatch('user1');
 
-  //prettier-ignore
-  expect(screen.getByText('This is a text message')).toBeInTheDocument();
+  expect(container.innerHTML).toMatch('This is a text message');
 });

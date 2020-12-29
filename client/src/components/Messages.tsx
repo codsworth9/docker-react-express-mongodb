@@ -31,7 +31,7 @@ export const Messages = () => {
                     </th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody data-testid="tableBody">
                   {messages?.map((message) => (
                     <MessagesItem {...message} key={message._id} />
                   ))}
