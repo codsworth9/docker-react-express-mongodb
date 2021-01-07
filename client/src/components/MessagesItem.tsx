@@ -16,7 +16,7 @@ export const MessagesItem: FC<Message> = ({
       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-full">
         {text}
       </td>
-      <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+      <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex">
         <button onClick={() => handleRemoveMessage(_id)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
